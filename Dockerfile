@@ -55,6 +55,11 @@ RUN julia -e 'using Pkg; Pkg.add("COSMO"); using COSMO'
 RUN julia -e 'using Pkg; Pkg.add("GLPK"); using GLPK'
 RUN julia -e 'using Pkg; Pkg.add("Ipopt"); using Ipopt'
 RUN julia -e 'using Pkg; Pkg.add("BlackBoxOptim"); using BlackBoxOptim'
+
+RUN julia -e 'ENV["PYTHON"]=""; using Pkg; Pkg.add("PyCall"); Pkg.build("PyCall"); using PyCall'
+RUN julia -e 'using Pkg; Pkg.add("PyPlot"); using PyPlot'
+RUN julia -e 'using Pkg; Pkg.add("PhysicalConstants"); using PhysicalConstants'
+
 # RUN julia -e 'Pkg.add("CPLEX");Pkg.build("CPLEX");'
 # RUN julia -e 'Pkg.add("Gurobi");'
 
